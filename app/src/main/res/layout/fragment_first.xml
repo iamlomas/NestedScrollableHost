@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FirstTabFragment">
+
+    <TextView
+            android:id="@+id/tvHorizontalScrolling"
+            android:text="Horizontal scrolling"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.iamlomas.nestedscrollablehost.nestedscrollablehost_library.NestedScrollableHost
+            android:id="@+id/horizontalNestedScrollableHost"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHorizontalScrolling"
+            app:layout_constraintBottom_toTopOf="@+id/tvVerticalScrolling"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+    </com.iamlomas.nestedscrollablehost.nestedscrollablehost_library.NestedScrollableHost>
+
+    <TextView
+            android:id="@+id/tvVerticalScrolling"
+            android:text="Vertical scrolling"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvVertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvVerticalScrolling" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
